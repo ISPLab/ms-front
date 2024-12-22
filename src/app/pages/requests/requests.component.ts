@@ -13,11 +13,11 @@ interface Request {
 @Component({
   selector: 'app-questions-book',
   standalone: true,
-  templateUrl: './questions-book.component.html',
-  styleUrl: './questions-book.component.scss',
+  templateUrl: './requests.component.html',
+  styleUrl: './requests.component.scss',
   imports: [CommonModule]
 })
-export class QuestionsBookComponent {
+export class RequestsComponent {
 
   constructor (private readonly cdr: ChangeDetectorRef) {     
   console.log(this.requests)

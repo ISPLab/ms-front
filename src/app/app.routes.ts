@@ -23,8 +23,8 @@ export const routes: Routes = [
       {
         path: 'questions',
         loadComponent: () =>
-          import('./pages/questions-book/questions-book.component').then(
-            (m) => m.QuestionsBookComponent,
+          import('./pages/requests/requests.component').then(
+            (m) => m.RequestsComponent,
           ),
         canActivate: [RoleGuard],
         data: { expectedRole: ['up-manager'] },
