@@ -6,14 +6,7 @@
     height: calc(100% - 43px);
     width: 100%;
   }
-  &__aside {
-    width: 230px;
-    box-sizing: border-box;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    box-shadow: 3px 1px 18px 0px rgba(48, 50, 50, 0.15);
-    height: 100%;
-  }
+
   &__content {
     height: 100%;
     width: calc(100% - 230px);
