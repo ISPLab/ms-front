@@ -28,8 +28,11 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }
+                "input": "public"                
+              },
+              "src/silent-check-sso.html",
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -88,7 +91,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/silent-check-sso.html",
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -98,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,46 @@
+<h2 class="demo__label">radio-button</h2>
+
+<div class="demo__wrapper">
+  <table>
+    <tr [formGroup]="form">
+      <th>color primary</th>
+      <td>
+        <app-radio
+          [items]="items"
+          formControlName="season"
+          color="primary"
+        ></app-radio>
+      </td>
+    </tr>
+    <tr [formGroup]="form">
+      <th>color accent</th>
+      <td>
+        <app-radio
+          [items]="items"
+          formControlName="season"
+          color="accent"
+        ></app-radio>
+      </td>
+    </tr>
+    <tr [formGroup]="form">
+      <th>color warn</th>
+      <td>
+        <app-radio
+          [items]="items"
+          formControlName="season"
+          color="warn"
+        ></app-radio>
+      </td>
+    </tr>
+    <tr [formGroup]="formDisabled">
+      <th>disabled</th>
+      <td>
+        <app-radio
+          [items]="items"
+          formControlName="season"
+          color="primary"
+        ></app-radio>
+      </td>
+    </tr>
+  </table>
+</div>

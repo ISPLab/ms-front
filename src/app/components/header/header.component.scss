@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-right: 20px;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.14);
+  background-color: var(--header-bg);
+  &__logo {
+    color: var(--typography-2);
+    font-size: 20px;
+    user-select: none;
+  }
+  &__link {
+    cursor: pointer;
+  }
+}

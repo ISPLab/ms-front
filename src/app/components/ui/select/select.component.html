@@ -1,0 +1,24 @@
+<mat-form-field [color]="color">
+  @if (label) {
+    <mat-label>{{ label }}</mat-label>
+  }
+  <mat-select
+    [multiple]="multiple"
+    [disabled]="disabled"
+    [required]="required"
+    [placeholder]="placeholder"
+    [ngModel]="value"
+    (ngModelChange)="onModelChange($event)"
+    (openedChange)="openedChange($event)"
+    (selectionChange)="selectionChange($event)"
+  >
+    @if (resetOption) {
+      <mat-option>{{ resetOption }}</mat-option>
+    }
+    @for (food of items; track food) {
+      <mat-option [value]="food.value">
+        {{ food.viewValue }}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>

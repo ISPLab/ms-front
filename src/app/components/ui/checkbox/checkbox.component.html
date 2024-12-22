@@ -1,0 +1,8 @@
+<mat-checkbox
+  [color]="color"
+  [disabled]="disabled"
+  [ngModel]="checked"
+  (ngModelChange)="onModelChange($event)"
+>
+  <ng-content></ng-content>
+</mat-checkbox>

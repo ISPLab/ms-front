@@ -1,0 +1,86 @@
+<!-- Шапка -->
+@if (data.type === 'confirm') {
+  <h2 mat-dialog-title>
+    {{ data.title ? data.title : 'Подтвердите действие' }}
+  </h2>
+} @else if (data.type === 'info') {
+  <h2 mat-dialog-title>{{ data.title ? data.title : '' }}</h2>
+} @else if (data.type === 'error') {
+  <h2 mat-dialog-title>
+    <div class="modal__title-error">
+      <div class="modal__title-error-icon">
+        <fa-icon [icon]="faCircleXmark" size="lg"></fa-icon>
+      </div>
+      {{ data.title ? data.title : 'Ошибка' }}
+    </div>
+  </h2>
+} @else if (data.type === 'input') {
+  <h2 mat-dialog-title>{{ data.title ? data.title : 'Введите данные' }}</h2>
+}
+
+<!-- Основной контент -->
+@if (data.type === 'input') {
+  <mat-dialog-content>
+    <p>{{ data.text }}</p>
+    <form [formGroup]="form">
+      <app-input formControlName="text" placeholder="Введите текст"></app-input>
+    </form>
+  </mat-dialog-content>
+} @else if (data.text) {
+  <mat-dialog-content>
+    <p>{{ data.text }}</p>
+  </mat-dialog-content>
+}
+
+<!-- Блок кнопок -->
+<mat-dialog-actions>
+  @if (data.type === 'confirm') {
+    <ng-container *ngTemplateOutlet="actionsDefault"></ng-container>
+  } @else if (data.type === 'info' || data.type === 'error') {
+    <ng-container *ngTemplateOutlet="actionsClose"></ng-container>
+  } @else if (data.type === 'input') {
+    <ng-container *ngTemplateOutlet="actionsInput"></ng-container>
+  }
+</mat-dialog-actions>
+
+<!-- Темплэйты -->
+<ng-template #actionsDefault>
+  <div class="modal__actions">
+    <app-button type="stroked" color="warn" (click)="close()">
+      {{ data.closeBtn ? data.closeBtn : 'Отмена' }}
+    </app-button>
+    <app-button
+      type="raised"
+      color="primary"
+      (click)="submit()"
+      [disabled]="form.invalid"
+    >
+      {{ data.submitBtn ? data.submitBtn : 'Подтвердить' }}
+    </app-button>
+  </div>
+</ng-template>
+
+<ng-template #actionsClose>
+  <div class="modal__actions">
+    <app-button type="raised" color="primary" (click)="submit()">
+      {{ data.closeBtn ? data.closeBtn : 'Ок' }}
+    </app-button>
+  </div>
+</ng-template>
+
+<ng-template #actionsInput>
+  <div class="modal__actions">
+    <app-button type="stroked" color="warn" (click)="close()">
+      {{ data.closeBtn ? data.closeBtn : 'Отмена' }}
+    </app-button>
+    <app-button
+      type="raised"
+      color="primary"
+      elType="submit"
+      [disabled]="form.invalid"
+      (click)="submit()"
+    >
+      {{ data.submitBtn ? data.submitBtn : 'Подтвердить' }}
+    </app-button>
+  </div>
+</ng-template>

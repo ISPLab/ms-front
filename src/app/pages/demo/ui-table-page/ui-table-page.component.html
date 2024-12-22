@@ -1,0 +1,41 @@
+<h2 class="demo__label">Таблица</h2>
+<div class="demo__wrapper">
+  <div>
+    <p class="demo__label">Отрисовка названий ключей - как есть</p>
+    <app-table [data]="employees"></app-table>
+  </div>
+  
+  <div>
+    <p class="demo__label">Заданы названия столбоцов, отрисовка занчений - как есть</p>
+    <app-table [data]="employees">
+      <ng-template appTableHeader>
+        <th>First</th>
+        <th>Last</th>
+      </ng-template>
+    </app-table>
+  </div>
+  
+  <div>
+    <p class="demo__label">Все ячейки - с кастомным контентом</p>
+    <app-table [data]="inventory">
+      <ng-template [appTableHeader]="inventory" let-header>
+        <th>Item</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+      </ng-template>
+      <ng-template [appTableRow]="inventory" let-row>
+        <td>{{ row.name }}</td>
+        <td>{{ row.price | currency: row.currency }}</td>
+        <td>
+          <button *ngIf="row.inStock > 0" (click)="editItem(row.plu)">
+            Редактировать
+          </button>
+        </td>
+        <td>
+          <button>Удалить</button>
+        </td>
+      </ng-template>
+    </app-table>
+  </div>
+</div>

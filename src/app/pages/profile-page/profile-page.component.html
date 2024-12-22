@@ -1,0 +1,59 @@
+@if (profile) {
+  <h2>User information</h2>
+  <table>
+    @if (profile.username) {
+      <tr>
+        <th scope="row">Username</th>
+        <td>{{ profile.username }}</td>
+      </tr>
+    }
+    @if (profile.firstName) {
+      <tr>
+        <th scope="row">First name</th>
+        <td>{{ profile.firstName }}</td>
+      </tr>
+    }
+    @if (profile.lastName) {
+      <tr>
+        <th scope="row">First name</th>
+        <td>{{ profile.lastName }}</td>
+      </tr>
+    }
+    @if (profile.email) {
+      <tr>
+        <th scope="row">E-mail</th>
+        <td>{{ profile.email }}</td>
+      </tr>
+    }
+    @if (profile.attributes?.['phone']) {
+      <tr>
+        <th scope="row">Phone *manual attribute</th>
+        <td>{{ profile.attributes?.['phone'] }}</td>
+      </tr>
+    }
+    @if (profile.attributes?.['department']) {
+      <tr>
+        <th scope="row">Department *manual attribute</th>
+        <td>{{ profile.attributes?.['department'] }}</td>
+      </tr>
+    }
+    @if (isUserInRole('view_part')) {
+      <tr>
+        <th scope="row">Role check</th>
+        <td>{{ getUserRoles() }}</td>
+      </tr>
+    }
+    <tr>
+      <th scope="row">E-mail verified</th>
+      <td>{{ profile.emailVerified ? 'Yes' : 'No' }}</td>
+    </tr>
+    <tr>
+      <th>
+        <app-button type="flat" color="primary" (click)="logout()">
+          Sign out
+        </app-button>
+      </th>
+      <td></td>
+    </tr>
+  </table>
+}

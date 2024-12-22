@@ -1,0 +1,59 @@
+.control {
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.dragarea {
+    font-size: 1.5rem;
+    border: 3px solid #bbb;
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #bbb;
+  }
+
+  &.droparea {
+    font-size: 1.5rem;
+    border: 3px dashed #bbb;
+    padding: 1.5rem;
+    background-color: #eff;
+    color: #aaa;
+  }
+
+  input[type='file'] {
+    opacity: 0.01;
+    position: absolute;
+    left: -999em;
+  }
+}
+
+.files {
+  width: 100%;
+  overflow: hidden;
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0 0;
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #2067b0;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  &__delete {
+    margin-left: 5px;
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}

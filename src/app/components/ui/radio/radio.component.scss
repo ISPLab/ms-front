@@ -1,0 +1,9 @@
+.radio-button-group {
+  .mdc-radio {
+    transform: scale(0.8);
+  }
+
+  mat-radio-button + mat-radio-button {
+    margin-left: 15px;
+  }
+}

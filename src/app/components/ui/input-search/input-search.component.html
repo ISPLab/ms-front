@@ -1,0 +1,34 @@
+<mat-form-field class="example-full-width">
+  @if (label) {
+    <mat-label>{{ label }}</mat-label>
+  }
+  <input
+    type="text"
+    matInput
+    [attr.aria-label]="label"
+    [placeholder]="placeholder"
+    [readonly]="readonly"
+    [disabled]="disabled"
+    [matAutocomplete]="auto"
+    [ngModel]="value"
+    (ngModelChange)="onModelChange($event)"
+  />
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @for (option of filteredOptions; track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
+    }
+  </mat-autocomplete>
+  @if (cleanable && value && !readonly && !disabled) {
+    <button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="onModelChange('')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+  @if (control.errors && control.dirty) {
+    <mat-error>{{ control.errors | errorFormText }}</mat-error>
+  }
+</mat-form-field>

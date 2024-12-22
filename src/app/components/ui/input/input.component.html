@@ -1,0 +1,14 @@
+<mat-form-field [color]="color">
+  @if (label) {
+    <mat-label>{{ label }}</mat-label>
+  }
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [type]="type"
+    [readonly]="readonly"
+    [disabled]="disabled"
+    [ngModel]="value"
+    (ngModelChange)="onModelChange($event)"
+  />
+</mat-form-field>

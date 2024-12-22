@@ -1,0 +1,28 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  &__list {
+    margin: 0px;
+  }
+  &__item {
+    padding-left: 12px;
+    padding-right: 12px;
+    align-items: center;
+    display: flex;
+    color: var(--typography-2);
+    min-height: 36px;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--row-selection-background);
+    }
+    &--active {
+      background-color: var(--row-selection-background);
+    }
+    &-text {
+      margin-left: 8px;
+    }
+    &-icon {
+      width: 16px;
+    }
+  }
+}

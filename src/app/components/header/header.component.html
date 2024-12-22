@@ -1,0 +1,16 @@
+<header class="header">
+  @if (isHomePage) {
+    <h1 class="header__logo">Морские решения</h1>
+  } @else {
+    <a class="header__link" routerLink="/">
+      <h1 class="header__logo">Морские решения</h1>
+    </a>
+  }
+
+  @if (profile) {
+    <app-profile-card
+      [username]="profile.username || ''"
+      [isProfilePage]="isProfilePage"
+    ></app-profile-card>
+  }
+</header>

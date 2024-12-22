@@ -1,0 +1,32 @@
+<div
+  class="control"
+  [class.dragarea]="areaClass === 'drag'"
+  [class.droparea]="areaClass === 'drop'"
+  [class.disabled]="disabled"
+  [title]="title"
+  (click)="onClick()"
+>
+  <ng-content></ng-content>
+  <input
+    #inputFile
+    type="file"
+    [multiple]="multiple"
+    [disabled]="disabled"
+    (change)="onChange($event)"
+  />
+</div>
+
+<div class="files">
+  @if (files.length) {
+    <ul class="files__list">
+      @for (file of files; track file; let index = $index) {
+        <li class="files__file">
+          <span class="files__name">{{ getName(file) }}</span>
+          <span class="files__delete" (click)="onDelete($event, index)">
+            &times;
+          </span>
+        </li>
+      }
+    </ul>
+  }
+</div>

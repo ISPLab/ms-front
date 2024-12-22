@@ -1,0 +1,27 @@
+<div class="profile-card">
+  <div>
+    @if (isProfilePage) {
+      <ng-container *ngTemplateOutlet="card"></ng-container>
+    } @else {
+      <a
+        matTooltip="Перейти в профиль"
+        class="profile-card__name link"
+        routerLink="profile"
+      >
+        <ng-container *ngTemplateOutlet="card"></ng-container>
+      </a>
+    }
+  </div>
+  <div>
+    <fa-icon
+      class="link"
+      [icon]="faArrowRightFromBracket"
+      matTooltip="Выход"
+      (click)="logout()"
+    ></fa-icon>
+  </div>
+</div>
+
+<ng-template #card>
+  <span class="profile-card__name">{{ username }}</span>
+</ng-template>

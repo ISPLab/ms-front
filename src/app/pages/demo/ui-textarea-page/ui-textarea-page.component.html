@@ -1,0 +1,63 @@
+<h2 class="demo__label">select</h2>
+
+<div class="demo__wrapper">
+  <table [formGroup]="form">
+    <tr>
+      <th>color primary</th>
+      <td>
+        <app-textarea formControlName="default" color="primary"></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>color accent</th>
+      <td>
+        <app-textarea formControlName="default" color="accent"></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>color warn</th>
+      <td>
+        <app-textarea formControlName="default" color="warn"></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>placeholder</th>
+      <td>
+        <app-textarea
+          formControlName="placeholder"
+          placeholder="Placeholder"
+        ></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td>
+        <app-textarea formControlName="label" label="Label"></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>value</th>
+      <td>
+        <app-textarea formControlName="value"></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>readonly</th>
+      <td>
+        <app-textarea formControlName="readonly" readonly></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>disabled</th>
+      <td>
+        <app-textarea formControlName="disabled"></app-textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>minRows 4</th>
+      <td>
+        <app-textarea formControlName="value" [minRows]="4"></app-textarea>
+      </td>
+    </tr>
+  </table>
+</div>

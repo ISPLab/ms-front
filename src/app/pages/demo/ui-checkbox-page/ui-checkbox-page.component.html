@@ -1,0 +1,46 @@
+<h2 class="demo__label">checkbox</h2>
+
+<div class="demo__wrapper">
+  <table>
+    <tr [formGroup]="form">
+      <th>color primary</th>
+      <td>
+        @for (item of items; track item) {
+          <app-checkbox [formControlName]="item" color="primary">
+            {{ item }}
+          </app-checkbox>
+        }
+      </td>
+    </tr>
+    <tr [formGroup]="form">
+      <th>color accent</th>
+      <td>
+        @for (item of items; track item) {
+          <app-checkbox [formControlName]="item" color="accent">
+            {{ item }}
+          </app-checkbox>
+        }
+      </td>
+    </tr>
+    <tr [formGroup]="form">
+      <th>color warn</th>
+      <td>
+        @for (item of items; track item) {
+          <app-checkbox [formControlName]="item" color="warn">
+            {{ item }}
+          </app-checkbox>
+        }
+      </td>
+    </tr>
+    <tr [formGroup]="formDisabled">
+      <th>disabled</th>
+      <td>
+        @for (item of items; track item) {
+          <app-checkbox [formControlName]="item" color="primary">
+            {{ item }}
+          </app-checkbox>
+        }
+      </td>
+    </tr>
+  </table>
+</div>

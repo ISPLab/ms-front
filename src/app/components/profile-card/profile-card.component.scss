@@ -1,0 +1,8 @@
+.profile-card {
+  display: flex;
+  column-gap: 24px;
+  align-items: center;
+  &__name {
+    font-size: 14px;
+  }
+}
