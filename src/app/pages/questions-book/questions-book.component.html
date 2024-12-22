@@ -1,0 +1,15 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<div class="container page-container">
+  <div class="row">
+    <div class="col-md-12">
+        <h4>Заявки</h4>
+        <div class="list-group">
+          <div *ngFor="let request of requests" class="list-group-item list-group-item-action">
+            {{ request.description }}
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div> 

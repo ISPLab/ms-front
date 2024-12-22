@@ -1,1 +1,19 @@
-<p>home-page works!</p>
+<div class="home">
+    <ul class="home__list">
+      @for (link of links; track link.url) {
+        @if (link.role | isUserInRole) {
+          <li>
+            <a [routerLink]="link.url" class="home__item app-card">
+              @if (link.icon) {
+                <span class="home__item-icon">
+                  <fa-icon [icon]="link.icon" size="lg"></fa-icon>
+                </span>
+              }
+              <span class="home__item-text">{{ link.label }}</span>
+            </a>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+  
